@@ -1,0 +1,17 @@
+:root {
+    // Гриды
+    --grid_col: repeat(12, 65px);
+    --grid_col_gap: 30px;
+
+    // Текст
+    --h1_font_size: 48px;
+    --h2_font_size: 36px;
+    --h3_font_size: 24px;
+    --p16_font_size: 16px;
+    --p14_font_size: 14px;
+
+    --color_test: #f7d14c;
+    --icon-color: red;
+}
+
+$svgcolor: #f7d14c;
