@@ -1,5 +1,6 @@
 @import "scss/font.scss";
 @import "scss/variable.scss";
+@import "scss/mixin.scss";
 
 * {
 	box-sizing: border-box;
@@ -9,9 +10,15 @@ body {
 	min-width: 320px;
 }
 
+ul {
+	margin: 0;
+	padding: 0;
+	list-style: none;
+}
+
 // Гриды
 //// //// //// //// //// //// //// ////
-.grod_wrap {
+.grid_wrap {
 	display: grid;
 	grid-template-columns: var(--grid_col);
 	grid-column-gap: var(--grid_col_gap);
@@ -20,51 +27,267 @@ body {
 	// grid-column-end: span 3;
 }
 
+// Кнопки
+//// //// //// //// //// //// //// ////
+.button {
+	@include text_body;
+	padding: 10px 20px 11px;
+	background-color: var(--color_m1_rest);
+	border-radius: 2px;
+	border: none;
+	@include hover-transition;
+
+	&:hover {
+		background-color: var(--color_m1_hover);
+		cursor: pointer;
+	}
+}
+
 // Текст
 //// //// //// //// //// //// //// ////
 body {
-	font-family: Inter, sans-serif;
-	font-style: normal;
-	font-weight: normal;
-	font-size: var(--p16_font_size);
-	line-height: 1.5;
-	letter-spacing: 0.004em;
+	@include text_body;
+	color: var(--color_tm);
 }
 
 h1,
 .mimicry_h1 {
-	font-family: Roboto, sans-serif;
-	font-weight: 300;
-	font-size: var(--h1_font_size);
-	line-height: 1.2;
-	letter-spacing: 0.01em;
+	@include text_h1;
 }
 
 h2,
 .mimicry_h2 {
-	font-family: Roboto;
-	font-weight: 300;
-	font-size: var(--h2_font_size);
-	line-height: 1.3;
-	letter-spacing: 0.012em;
+	@include text_h2;
 }
 
 h3,
 .mimicry_h3 {
-	font-family: Roboto;
-	font-weight: 400;
-	font-size: var(--h3_font_size);
-	line-height: 1.3;
-	letter-spacing: 0.015em;
+	@include text_h3;
 }
 
 .p14 {
 	font-size: var(--p14_font_size);
 }
 
-// .box1 {
-// 	width: 135px;
-// 	height: 50px;
+a {
+	color: var(--color_tm);
+	@include hover-transition;
+
+	&:hover {
+		background-color: var(--color_m1_hover);
+	}
+}
+
+// Главное меню
+//// //// //// //// //// //// //// ////
+.main-menu {
+	width: 100%;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+}
+
+.top-block {
+	width: var(--content_width);
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	padding: 20px 0;
+}
+
+.logo {
+	width: 135px;
+	height: 50px;
+	background: url("svg/sprite_icons_css.svg#logo2") no-repeat;
+	display: block;
+	@include a_hover-none;
+}
+
+.address__link {
+	color: var(--color_tm);
+	font-style: normal;
+	text-decoration: none;
+	text-align: center;
+	display: inline-flex;
+	flex-direction: column;
+	align-items: center;
+	@include a_hover-none;
+
+	&:hover span {
+		background-color: var(--color_m1_hover);
+	}
+}
+
+.address__icon {
+	&::before {
+		content: "";
+		display: inline-block;
+		width: 20px;
+		height: 20px;
+		background: url("svg/sprite_icons_css.svg#location") no-repeat;
+		margin-right: 5px;
+		margin-bottom: -3px;
+	}
+}
+
+.pone {
+	display: flex;
+	align-items: center;
+	> * {
+		&:nth-child(n) {
+			margin-right: 10px;
+		}
+
+		&:last-child {
+			margin-right: 0;
+		}
+	}
+}
+
+.pone__linc {
+	font-size: 22px;
+	text-decoration: none;
+	line-height: 26px;
+}
+
+.pone__icon {
+	display: inline-block;
+	width: 26px;
+	height: 26px;
+
+	@include a_hover-none;
+}
+
+.pone__icon_skype {
+	background: url("svg/sprite_icons_css.svg#logos-skype") no-repeat;
+}
+
+.pone__icon_telegram {
+	background: url("svg/sprite_icons_css.svg#logos-telegram") no-repeat;
+}
+
+.pone__icon_whatsapp {
+	background: url("svg/sprite_icons_css.svg#logos-whatsapp") no-repeat;
+	width: 27px;
+}
+
+.nav-secondary {
+	width: 100%;
+	background-color: var(--color_05);
+	display: flex;
+	justify-content: center;
+}
+
+.nav-secondary__wrap {
+	width: var(--content_width);
+}
+
+.nav-secondary__item {
+	margin-right: 50px;
+	display: inline-block;
+	position: relative;
+
+	&:last-child {
+		margin-right: 0;
+	}
+}
+
+.nav-secondary__link {
+	display: inline-block;
+	padding: 5px 0 4px;
+	text-decoration: none;
+	font-size: var(--p14_font_size);
+	color: var(--color_b2);
+	position: relative;
+	@include hover-transition;
+	transition-property: color;
+
+	&:hover {
+		background-color: var(--color_10);
+		color: var(--color_tm);
+	}
+}
+
+.nav-secondary__item_dropdown {
+	&:focus-within .dropdown-list {
+		visibility: visible;
+		opacity: 1;
+	}
+}
+
+.nav-secondary__link_dropdown {
+	&:hover::after {
+		background-color: var(--color_tm);
+	}
+
+	&::after {
+		content: "";
+		display: inline-block;
+		width: 10px;
+		height: 10px;
+		mask: url("svg/sprite_icons_css.svg#small-arrow") no-repeat;
+		background-color: var(--color_b2);
+		margin-left: 5px;
+	}
+}
+
+.dropdown-list {
+	visibility: hidden;
+	opacity: 0;
+	position: absolute;
+	left: -10px;
+	top: 100%;
+	background-color: var(--color_w);
+	border: 1px solid #ccc;
+	transition: opacity 150ms ease-in-out 0ms, visibility 0ms ease-in-out 150ms;
+}
+
+.dropdown-list__item {
+	white-space: nowrap;
+
+	&:hover {
+		background-color: var(--color_10);
+	}
+}
+
+.dropdown-list__link {
+	display: inline-block;
+	width: 100%;
+	padding: 5px 10px;
+	@include a_hover-none;
+	font-size: var(--p14_font_size);
+	text-decoration: none;
+}
+
+.nav-main {
+	width: 100%;
+	background-color: var(--color_m1_rest);
+	display: flex;
+	justify-content: center;
+}
+
+.nav-main__wrap {
+	width: var(--content_width);
+}
+
+.nav-main__item {
+	display: inline-block;
+	margin-right: 70px;
+
+	&:last-child {
+		margin-right: 0;
+	}
+}
+
+.nav-main__linc {
+	display: inline-block;
+	text-decoration: none;
+	padding: 13px 0;
+
+	&:hover {
+		background-color: var(--color_m1_hover);
+	}
+}
+
 // 	background: url("svg/sprite_icons_css.svg#logo2") no-repeat;
 // 	transform: scale(5) translate(40%, 40%);
-// }

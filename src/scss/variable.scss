@@ -1,17 +1,26 @@
 :root {
-    // Гриды
-    --grid_col: repeat(12, 65px);
-    --grid_col_gap: 30px;
+	// Гриды
+	--grid_col: repeat(12, 65px);
+	--grid_col_gap: 30px;
 
-    // Текст
-    --h1_font_size: 48px;
-    --h2_font_size: 36px;
-    --h3_font_size: 24px;
-    --p16_font_size: 16px;
-    --p14_font_size: 14px;
+	--content_width: 1110px;
 
-    --color_test: #f7d14c;
-    --icon-color: red;
+	// Текст
+	--h1_font_size: 48px;
+	--h2_font_size: 36px;
+	--h3_font_size: 24px;
+	--p16_font_size: 16px;
+	--p14_font_size: 14px;
+
+	// Цвут
+	--color_m1_rest: #f7d14c;
+	--color_m1_hover: #f7c619;
+	--color_tm: #2e2e2e;
+	--color_b2: #666666;
+	--color_10: #e5e5e5;
+	--color_05: #f2f2f2;
+	--color_03: #f7f7f7;
+	--color_w: #ffffff;
+
+	--c_test: #dd0b0b;
 }
-
-$svgcolor: #f7d14c;
