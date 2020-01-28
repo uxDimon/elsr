@@ -18,13 +18,17 @@ ul {
 
 // Гриды
 //// //// //// //// //// //// //// ////
-.grid_wrap {
+.grid-wrap {
 	display: grid;
 	grid-template-columns: var(--grid_col);
 	grid-column-gap: var(--grid_col_gap);
 	justify-content: center;
 
 	// grid-column-end: span 3;
+}
+
+.grid-wrap_pading {
+	padding: 60px 0;
 }
 
 // Кнопки
@@ -53,16 +57,27 @@ body {
 h1,
 .mimicry_h1 {
 	@include text_h1;
+	margin-top: 0;
+	margin-bottom: 10px;
 }
 
 h2,
 .mimicry_h2 {
 	@include text_h2;
+	margin-top: 0;
+	margin-bottom: 10px;
 }
 
 h3,
 .mimicry_h3 {
 	@include text_h3;
+	margin-top: 0;
+	margin-bottom: 10px;
+}
+
+p {
+	margin-top: 10px;
+	margin-bottom: 10px;
 }
 
 .p14 {
@@ -76,6 +91,14 @@ a {
 	&:hover {
 		background-color: var(--color_m1_hover);
 	}
+}
+
+.font-numerators {
+	font-feature-settings: "numr" 1;
+}
+
+.text-color_b2 {
+	color: var(--color_b2);
 }
 
 // Главное меню
@@ -303,6 +326,96 @@ a {
 		background: url("svg/sprite_icons_css.svg#calc2") no-repeat;
 		margin-right: 9px;
 	}
+}
+
+// Качественный ремонт без забот
+//// //// //// //// //// //// //// ////
+.slider-block__headline-h1 {
+	grid-column: 1 / span 12;
+	margin-bottom: 40px;
+}
+
+.slider-block__text-wrap {
+	position: relative;
+	grid-column: 1 / span 3;
+	align-self: start;
+	z-index: 2;
+}
+
+.slider-block__text-block {
+	width: 380px;
+	margin-top: 50px;
+	margin-bottom: 20px;
+	padding: 30px 30px 30px 0;
+	background-color: var(--color_w);
+}
+
+.head-slider {
+	grid-column: 4 / span 9;
+	position: relative;
+}
+
+.head-slider__swiper-container {
+	height: 500px;
+	width: 100%;
+}
+
+.swiper-slide__img {
+	width: 100%;
+	height: 100%;
+}
+
+.swiper-slide_position {
+	position: relative;
+}
+
+.swiper-slide__description {
+	display: block;
+	position: absolute;
+	bottom: 10px;
+	left: 76px;
+	padding: 4px 10px;
+	background-color: var(--color_w);
+}
+
+.head-slider__button {
+	width: 56px;
+	height: 56px;
+	background-color: var(--color_w);
+	z-index: 2;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	cursor: pointer;
+	@include hover-transition;
+
+	&:hover {
+		background-color: var(--color_m1_hover);
+	}
+
+	&::before {
+		content: "";
+		width: 38px;
+		height: 34px;
+		display: block;
+		background: url("svg/sprite_icons_css.svg#large-arrow") no-repeat;
+	}
+}
+
+.head-slider__button_next {
+	position: absolute;
+	bottom: 10px;
+	left: 10px;
+
+	&::before {
+		transform: rotate(180deg);
+	}
+}
+
+.head-slider__button_prev {
+	position: absolute;
+	bottom: 10px;
+	right: calc(100% + 10px);
 }
 
 // 	background: url("svg/sprite_icons_css.svg#logo2") no-repeat;

@@ -8,11 +8,14 @@
 	<body>
 		<!-- <svg><use xlink:href="svg/sprite_icons.svg#possessions"></use></svg> -->
 
+		<!-- Главное меню -->
 		<header class="main-menu">
 			<div class="top-block">
 				<a href="#" title="Перейти на главную страницу" class="logo"></a>
 				<address class="address">
-					<a class="address__link" href="#"><span class="address__icon">Москва</span><span>Оршанская д 9 оф 15</span></a>
+					<a class="address__link" href="#"
+						><span class="address__icon">Москва</span><span>Оршанская д 9 оф 15</span></a
+					>
 				</address>
 				<div class="pone">
 					<a href="tel:+79876543210" class="pone__linc">+7 (987) 654-32-10</a>
@@ -23,48 +26,48 @@
 				<button class="button">Вызвать замерщика</button>
 			</div>
 			<div class="nav-secondary">
-				<nav class="nav-secondary__wrap"> 
+				<nav class="nav-secondary__wrap">
 					<ul class="nav-secondary__list">
-						<ui class="nav-secondary__item nav-secondary__item_dropdown">
-							<a class="nav-secondary__link nav-secondary__link_dropdown" href="#">Виды ремонта</a class="nav-secondary__link">
+						<li class="nav-secondary__item nav-secondary__item_dropdown">
+							<a class="nav-secondary__link nav-secondary__link_dropdown" href="#">Виды ремонта</a>
 							<ul class="dropdown-list">
-								<ui class="dropdown-list__item">
+								<li class="dropdown-list__item">
 									<a class="dropdown-list__link" href="#">Виды ремонта 1</a>
-								</ui>
-								<ui class="dropdown-list__item">
+								</li>
+								<li class="dropdown-list__item">
 									<a class="dropdown-list__link" href="#">Виды ремонта 2</a>
-								</ui>
-								<ui class="dropdown-list__item">
+								</li>
+								<li class="dropdown-list__item">
 									<a class="dropdown-list__link" href="#">Виды ремонта 3</a>
-								</ui>
-								<ui class="dropdown-list__item">
+								</li>
+								<li class="dropdown-list__item">
 									<a class="dropdown-list__link" href="#">Виды ремонта 4</a>
-								</ui>
+								</li>
 							</ul>
-						</ui>
-						<ui class="nav-secondary__item nav-secondary__item_dropdown">
+						</li>
+						<li class="nav-secondary__item nav-secondary__item_dropdown">
 							<a class="nav-secondary__link nav-secondary__link_dropdown" href="#">Типы помещений</a>
 							<ul class="dropdown-list">
-								<ui class="dropdown-list__item">
+								<li class="dropdown-list__item">
 									<a class="dropdown-list__link" href="#">Типы помещений 1</a>
-								</ui>
-								<ui class="dropdown-list__item">
+								</li>
+								<li class="dropdown-list__item">
 									<a class="dropdown-list__link" href="#">Типы помещений 2</a>
-								</ui>
-								<ui class="dropdown-list__item">
+								</li>
+								<li class="dropdown-list__item">
 									<a class="dropdown-list__link" href="#">Типы помещений 3</a>
-								</ui>
-								<ui class="dropdown-list__item">
+								</li>
+								<li class="dropdown-list__item">
 									<a class="dropdown-list__link" href="#">Типы помещений 4</a>
-								</ui>
+								</li>
 							</ul>
-						</ui>
-						<ui class="nav-secondary__item">
+						</li>
+						<li class="nav-secondary__item">
 							<a class="nav-secondary__link" href="#">Отзывы</a>
-						</ui>
-						<ui class="nav-secondary__item">
+						</li>
+						<li class="nav-secondary__item">
 							<a class="nav-secondary__link" href="#">Гарантии</a>
-						</ui>
+						</li>
 					</ul>
 				</nav>
 			</div>
@@ -80,10 +83,58 @@
 					<a href="#" class="nav-main__linc nav-main__linc_icon">Калькулятор ремонта</a>
 				</nav>
 			</div>
-		</header>   
+		</header>
 
-		<!-- Чем мы отличаемся от 90% ремонтных компаний: -->
-		<div class="icons_aria grid_wrap">
+		<!-- Качественный ремонт без забот -->
+		<div class="grid-wrap grid-wrap_pading slider-block">
+			<h1 class="slider-block__headline-h1">Качественный ремонт без забот</h1>
+			<div class="slider-block__text-wrap">
+				<div class="slider-block__text-block">
+					<h3>Проснувшись однажды утром после беспокойного</h3>
+					<p class="text-color_b2">
+						Лежа на панцирнотвердой спине, он видел, стоило ему приподнять голову, свой коричневый, выпуклый,
+						разделенный дугообразными чешуйками.
+					</p>
+				</div>
+				<button class="button slider-block__button">Бесплатная консультация</button>
+			</div>
+			<!-- Swiper -->
+			<div class="head-slider">
+				<div class="swiper-container head-slider__swiper-container">
+					<div class="swiper-wrapper">
+						<div class="swiper-slide swiper-slide_position">
+							<img src="img/demo-img04-min.jpg" alt="" class="swiper-slide__img" />
+							<ul class="swiper-slide__description">
+								<li class="swiper-slide__item">
+									<span class="text-color_b2">Квартира</span> 52,6 <span class="font-numerators">м2</span>
+								</li>
+								<li class="swiper-slide__item"><span class="text-color_b2">Стоимость ремонта</span> 420 000 ₽</li>
+							</ul>
+						</div>
+						<div class="swiper-slide">
+							<img src="img/demo-img03-min.jpg" alt="" class="swiper-slide__img" />
+							<ul class="swiper-slide__description">
+								<li class="swiper-slide__item">
+									<span class="text-color_b2">Квартира</span> 47,2 <span class="font-numerators">м2</span>
+								</li>
+								<li class="swiper-slide__item"><span class="text-color_b2">Стоимость ремонта</span> 360 000 ₽</li>
+							</ul>
+						</div>
+						<div class="swiper-slide">
+							<img src="img/demo-img02-min.jpg" alt="" class="swiper-slide__img" />
+							<ul class="swiper-slide__description">
+								<li class="swiper-slide__item">
+									<span class="text-color_b2">Квартира</span> 90,1 <span class="font-numerators">м2</span>
+								</li>
+								<li class="swiper-slide__item"><span class="text-color_b2">Стоимость ремонта</span> 1 220 000 ₽</li>
+							</ul>
+						</div>
+					</div>
+				</div>
+				<!-- Add Arrows -->
+				<div class="head-slider__button head-slider__button_prev"></div>
+				<div class="head-slider__button head-slider__button_next"></div>
+			</div>
 		</div>
 
 		<script src="index.js"></script>
