@@ -608,6 +608,51 @@ a,
 	}
 }
 
+// Этапы ремонта квартиры в новостройке
+//// //// //// //// //// //// //// ////
+.numbered-icons-block {
+	grid-row-gap: 70px;
+}
+
+.numbered-icons-block__headline-h2 {
+	grid-column: 1 / span 12;
+	margin-bottom: -20px;
+}
+
+.numbered-icons-item {
+	grid-column-end: span 6;
+	justify-self: center;
+	width: 450px;
+
+	&:last-of-type:nth-of-type(odd) {
+		grid-column-end: span 12;
+	}
+}
+
+.numbered-icons-item__wrap {
+	display: flex;
+	align-items: center;
+}
+
+.numbered-icons-item__number {
+	width: 25px;
+	font-size: 70px;
+	line-height: 1;
+	color: var(--color_m1_rest);
+}
+
+.numbered-icons-item__icons {
+	display: block;
+	flex: 0 0 50px;
+	width: 50px;
+	height: 50px;
+	fill: var(--color_tm);
+}
+
+.numbered-icons-item__headline {
+	margin-bottom: 0;
+}
+
 // grid-column: 1 / span 3;
 // 	background: url("svg/sprite_icons_css.svg#logo2") no-repeat;
 // 	transform: scale(5) translate(40%, 40%);
