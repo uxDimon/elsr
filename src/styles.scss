@@ -209,6 +209,14 @@ a,
 	line-height: 26px;
 }
 
+.pone__linc-color-w {
+	color: var(--color_w);
+
+	&:hover {
+		color: var(--color_tm);
+	}
+}
+
 .pone__icon {
 	display: inline-block;
 	width: 26px;
@@ -259,7 +267,6 @@ a,
 	color: var(--color_b2);
 	position: relative;
 	@include hover-transition;
-	transition-property: color, background-color;
 
 	&:hover {
 		background-color: var(--color_10);
@@ -536,7 +543,6 @@ a,
 .card-item__name-prise,
 .card-item__description {
 	@include hover-transition;
-	transition-property: color, background-color;
 }
 
 .card-item__img-wrap {
@@ -569,6 +575,37 @@ a,
 
 .card-item__description {
 	color: var(--color_b2);
+}
+
+// Нужна консультация специалиста?
+//// //// //// //// //// //// //// ////
+.consultation {
+	background-color: var(--color_b2);
+	color: var(--color_w);
+}
+
+.consultation__headline-h2,
+.consultation__tex-block,
+.consultation__wrap {
+	grid-column: 1 / span 12;
+}
+
+.consultation__tex-block {
+	margin: 0 0 40px;
+}
+
+.consultation__wrap {
+	justify-self: center;
+	display: flex;
+	justify-content: center;
+
+	> * {
+		margin-right: 40px;
+	}
+
+	> *:last-child {
+		margin-right: 0;
+	}
 }
 
 // grid-column: 1 / span 3;
