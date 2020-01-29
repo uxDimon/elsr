@@ -5,8 +5,7 @@
 }
 
 @mixin hover-transition {
-	transition: 150ms ease-in-out 0ms;
-	transition-property: background-color;
+	transition: background-color 150ms ease-out 0ms;
 }
 
 @mixin text_body($font_size: var(--p16_font_size)) {
