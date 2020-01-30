@@ -75,6 +75,19 @@ ul {
 	}
 }
 
+// Разное
+//// //// //// //// //// //// //// ////
+.prise-blick {
+	display: block;
+	padding: 4px 10px;
+	background-color: var(--color_w);
+}
+
+.prise-blick__item_name {
+	font-weight: 500;
+	font-size: 20px;
+}
+
 // Текст
 //// //// //// //// //// //// //// ////
 body {
@@ -106,6 +119,10 @@ h3,
 p {
 	margin-top: 10px;
 	margin-bottom: 10px;
+
+	&:last-child {
+		margin-bottom: 0;
+	}
 }
 
 .p14 {
@@ -414,13 +431,10 @@ a,
 	position: relative;
 }
 
-.swiper-slide__description {
-	display: block;
+.swiper-slide__prise-blick {
 	position: absolute;
 	bottom: 10px;
 	left: 76px;
-	padding: 4px 10px;
-	background-color: var(--color_w);
 }
 
 .head-slider__button {
@@ -531,7 +545,7 @@ a,
 }
 
 .card-item {
-	&:hover .card-item__name-prise,
+	&:hover .card-item__prise-blick,
 	&:hover .card-item__linc-detail {
 		background-color: var(--color_m1_hover);
 	}
@@ -540,7 +554,7 @@ a,
 	}
 }
 
-.card-item__name-prise,
+.card-item__prise-blick,
 .card-item__description {
 	@include hover-transition;
 }
@@ -559,18 +573,10 @@ a,
 	object-fit: cover;
 }
 
-.card-item__name-prise {
-	display: block;
+.card-item__prise-blick {
 	position: absolute;
 	bottom: 10px;
 	left: 10px;
-	padding: 4px 10px;
-	background-color: var(--color_w);
-}
-
-.card-item__name {
-	font-weight: 500;
-	font-size: 20px;
 }
 
 .card-item__description {
@@ -651,6 +657,67 @@ a,
 
 .numbered-icons-item__headline {
 	margin-bottom: 0;
+}
+
+// Наши работы
+//// //// //// //// //// //// //// ////
+.finished-work {
+	background-color: var(--color_03);
+	grid-row-gap: 30px;
+}
+
+.finished-work__headline-h2 {
+	grid-column: 1 / span 12;
+}
+
+.gallery-works-item {
+	display: block;
+	position: relative;
+	height: 300px;
+
+	&:hover > .prise-blick {
+		background-color: var(--color_m1_hover);
+	}
+
+	&:hover > .prise-blick .text-color_b2 {
+		color: var(--color_tm);
+	}
+
+	&:nth-of-type(4n),
+	&:nth-of-type(4n + 1) {
+		grid-column-end: span 5;
+	}
+
+	&:nth-of-type(4n + 2),
+	&:nth-of-type(4n + 3) {
+		grid-column-end: span 7;
+	}
+
+	&:last-of-type:nth-of-type(odd) {
+		grid-column-end: span 12;
+	}
+}
+
+.gallery-works-item__img {
+	display: block;
+	object-fit: cover;
+	width: 100%;
+	height: 100%;
+	z-index: 1;
+}
+
+.gallery-works-item__prise-blick {
+	position: absolute;
+	bottom: 10px;
+	left: 10px;
+	z-index: 2;
+	@include hover-transition;
+}
+
+.gallery-works-item__button {
+	grid-column: 1 / span 12;
+	justify-self: center;
+	margin-top: 10px;
 }
 
 // grid-column: 1 / span 3;
