@@ -720,6 +720,43 @@ a,
 	margin-top: 10px;
 }
 
+// Отделочные материалы
+//// //// //// //// //// //// //// ////
+.materials__headline-h2 {
+	grid-column: 1 / span 12;
+	margin-bottom: 50px;
+}
+
+.materials__accentuated-text {
+	grid-column-end: span 6;
+	margin-bottom: 60px;
+}
+
+.accentuated-text {
+	padding-left: 10px;
+	border-left: 4px solid var(--color_m1_rest);
+}
+
+.logos-block {
+	grid-column: 1 / span 12;
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+}
+
+.logos-block__img {
+	mix-blend-mode: darken;
+}
+
+.materials__logos-block {
+	margin-bottom: 30px;
+}
+
+.materials__text {
+	grid-column: 1 / span 12;
+	text-align: center;
+}
+
 // grid-column: 1 / span 3;
 // 	background: url("svg/sprite_icons_css.svg#logo2") no-repeat;
 // 	transform: scale(5) translate(40%, 40%);
