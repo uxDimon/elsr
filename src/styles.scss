@@ -33,16 +33,22 @@ ul {
 //// //// //// //// //// //// //// ////
 .button {
 	@include text_body;
-	padding: 10px 20px 11px;
+	padding: 9px 20px 10px;
 	background-color: var(--color_m1_rest);
+	border: 1px solid var(--color_m1_rest);
 	border-radius: 2px;
-	border: none;
 	@include hover-transition;
 
 	&:hover {
 		background-color: var(--color_m1_hover);
+		border: 1px solid var(--color_m1_hover);
 		cursor: pointer;
 	}
+}
+
+.button_ghost {
+	border: 1px solid var(--color_tm);
+	background-color: var(--color_w);
 }
 
 .linc-arrow {
@@ -112,6 +118,12 @@ h2,
 h3,
 .mimicry_h3 {
 	@include text_h3;
+	margin-top: 0;
+	margin-bottom: 10px;
+}
+
+h5 {
+	@include text_body(18px);
 	margin-top: 0;
 	margin-bottom: 10px;
 }
@@ -755,6 +767,100 @@ a,
 .materials__text {
 	grid-column: 1 / span 12;
 	text-align: center;
+}
+
+// Отзывы
+//// //// //// //// //// //// //// ////
+.reviews-wrap {
+	grid-column-end: span 6;
+}
+
+.reviews-wrap__headline {
+	margin-bottom: 30px;
+}
+
+.review-block__user-card {
+	display: flex;
+	align-items: center;
+	margin-bottom: 20px;
+}
+
+.review-block__avatar {
+	width: 60px;
+	height: 60px;
+	border-radius: 100px;
+	object-fit: cover;
+	margin-right: 10px;
+}
+
+.review-block__name {
+	margin-bottom: 0;
+}
+
+.review-block__apartment-area {
+	color: var(--color_b2);
+}
+
+.review-block__swiper-container {
+	height: 100px;
+	display: flex;
+	justify-content: space-between;
+	margin-bottom: 20px;
+}
+
+.review-block__button {
+	flex: 0 0 24px;
+	width: 24px;
+	height: 100%;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	cursor: pointer;
+	overflow: hidden;
+
+	&::before {
+		content: "";
+		display: block;
+		flex: 0 0 34px;
+		width: 34px;
+		height: 34px;
+		@include hover-transition;
+		mask: url("svg/sprite_icons_css.svg#large-arrow") no-repeat;
+		background-color: var(--color_tm);
+	}
+}
+
+.review-block .swiper-button-disabled {
+	cursor: default;
+
+	&::before {
+		background-color: #b9b9b9;
+	}
+}
+
+.review-block__button_prev {
+	margin-right: 10px;
+}
+
+.review-block__button_next {
+	margin-left: 10px;
+
+	&::before {
+		transform: rotate(-180deg);
+	}
+}
+
+.review-block__img {
+	display: block;
+	width: 100%;
+	height: 100%;
+	object-fit: cover;
+}
+
+.user-reviews__button {
+	grid-column: 1 / span 12;
+	justify-self: center;
+	margin-top: 40px;
 }
 
 // grid-column: 1 / span 3;
