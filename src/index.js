@@ -2,6 +2,17 @@ import "./styles.scss";
 import Swiper from "swiper";
 import "../node_modules/swiper/css/swiper.min.css";
 
+for (let i of document.querySelectorAll(".input-text__input-area")) {
+	// Добавляет класс к 'label > span' если в input есть значение
+	i.onchange = function() {
+		if (i.value != "") {
+			i.nextElementSibling.classList.add("input-text__placeholder-mimicry_up");
+		} else {
+			i.nextElementSibling.classList.remove("input-text__placeholder-mimicry_up");
+		}
+	};
+}
+
 var mySwiper = new Swiper(".head-slider > .swiper-container", {
 	// https://swiperjs.com/api
 	// Optional parameters
