@@ -41,11 +41,11 @@ ul {
 	background-color: var(--color_m1_rest);
 	border: 1px solid var(--color_m1_rest);
 	border-radius: 2px;
-	@include hover-transition;
+	@include hover-transition((color, background-color, border-color));
 
 	&:hover {
 		background-color: var(--color_m1_hover);
-		border: 1px solid var(--color_m1_hover);
+		border-color: var(--color_m1_hover);
 		cursor: pointer;
 	}
 }
@@ -55,15 +55,31 @@ ul {
 	background-color: var(--color_w);
 }
 
-.button_icon_pone {
-	&::before {
-		content: "";
-		display: block;
-		margin-right: 10px;
-		width: 20px;
-		height: 20px;
-		background: url("svg/sprite_icons_css.svg#phone") no-repeat;
-	}
+.button_icon_pone::before {
+	content: "";
+	display: block;
+	margin-right: 10px;
+	width: 20px;
+	height: 20px;
+	background: url("svg/sprite_icons_css.svg#phone") no-repeat;
+}
+
+.button_icon_calculator::before {
+	content: "";
+	display: block;
+	margin-right: 9px;
+	width: 25px;
+	height: 25px;
+	background: url("svg/sprite_icons_css.svg#calc2") no-repeat;
+}
+
+.button_icon_dev::after {
+	content: "";
+	display: block;
+	margin-left: 8px;
+	width: 18px;
+	height: 20px;
+	background: url("svg/sprite_icons_css.svg#han") no-repeat;
 }
 
 .linc-arrow {
@@ -239,9 +255,18 @@ a,
 .logo {
 	width: 135px;
 	height: 50px;
-	background: url("svg/sprite_icons_css.svg#logo2") no-repeat;
+	mask: url("svg/sprite_icons_css.svg#logo2") no-repeat;
+	background-color: var(--color_tm);
 	display: block;
 	@include a_hover-none;
+}
+
+.footer-contact-block__logo {
+	background-color: var(--color_w);
+}
+
+.address {
+	font-style: normal;
 }
 
 .address__link {
@@ -268,7 +293,8 @@ a,
 		display: inline-block;
 		width: 20px;
 		height: 20px;
-		background: url("svg/sprite_icons_css.svg#location") no-repeat;
+		mask: url("svg/sprite_icons_css.svg#location") no-repeat;
+		background-color: var(--color_tm);
 		margin-right: 5px;
 		margin-bottom: -3px;
 	}
@@ -942,6 +968,258 @@ a,
 
 .contact-form__button {
 	justify-self: center;
+}
+
+// Футер
+//// //// //// //// //// //// //// ////
+.footer {
+	color: var(--color_w);
+	height: 100%;
+}
+
+.footer-top-wrap {
+	background-color: var(--color_b2);
+	padding: 50px 0;
+}
+
+.footer__manu-wrap {
+	grid-column-end: span 7;
+	display: flex;
+	justify-content: space-between;
+}
+
+.footer-main-manu__item {
+	margin-bottom: 15px;
+
+	&:last-child {
+		margin-bottom: 0;
+	}
+}
+
+.footer-main-manu__linc {
+	font-size: 18px;
+	color: var(--color_w);
+	text-decoration: none;
+}
+
+.footer-manu__linc_main {
+	display: inline-block;
+	font-size: 18px;
+	color: var(--color_w);
+	margin-bottom: 15px;
+	text-decoration: none;
+}
+
+.footer-manu__item {
+	margin-bottom: 10px;
+
+	&:last-child {
+		margin-bottom: 0;
+	}
+}
+
+.footer-manu__linc {
+	font-size: 14px;
+	color: var(--color_w);
+	text-decoration: none;
+}
+
+.footer-contact-block {
+	grid-column-end: span 5;
+	display: flex;
+	flex-direction: column;
+	align-items: flex-end;
+}
+
+.footer-contact-block__logo,
+.footer-contact-block__button {
+	margin-bottom: 30px;
+}
+
+.footer-contact-block__pone {
+	margin-bottom: 20px;
+}
+
+.social-icons {
+	display: flex;
+	align-items: center;
+}
+
+.social-icons__icon {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	margin-right: 27px;
+	position: relative;
+	@include a_hover-none;
+
+	&:last-child {
+		margin-right: 0;
+	}
+
+	&::before {
+		@include hover-transition;
+		background-color: var(--color_w);
+		z-index: 2;
+	}
+
+	&::after {
+		content: "";
+		position: absolute;
+		display: block;
+		width: 40px;
+		height: 40px;
+		border-radius: 100px;
+		background-color: var(--color_b2);
+		@include hover-transition;
+		z-index: 1;
+	}
+
+	&:hover::after {
+		background-color: var(--color_w);
+	}
+}
+
+.social-icons__icon_vk {
+	&::before {
+		content: "";
+		display: block;
+		width: 32px;
+		height: 30px;
+		margin: 0 -1px;
+		mask: url("svg/sprite_icons_css.svg#social_vk") no-repeat;
+	}
+
+	&:hover::before {
+		background-color: #45668e;
+	}
+}
+
+.social-icons__icon_ok {
+	&::before {
+		content: "";
+		display: block;
+		width: 30px;
+		height: 30px;
+		mask: url("svg/sprite_icons_css.svg#social_ok") no-repeat;
+	}
+
+	&:hover::before {
+		background-color: #f2720c;
+	}
+}
+
+.social-icons__icon_facebook {
+	&::before {
+		content: "";
+		display: block;
+		width: 30px;
+		height: 30px;
+		mask: url("svg/sprite_icons_css.svg#social_facebook") no-repeat;
+	}
+
+	&:hover::before {
+		background-color: #3b5998;
+	}
+}
+
+.social-icons__icon_instagram {
+	&::before {
+		content: "";
+		display: block;
+		width: 31px;
+		height: 30px;
+		mask: url("svg/sprite_icons_css.svg#social_instagram") no-repeat;
+	}
+
+	&:hover::before {
+		background-color: #e4405f;
+	}
+}
+
+.social-icons__icon_twitter {
+	&::before {
+		content: "";
+		display: block;
+		width: 30px;
+		height: 30px;
+		mask: url("svg/sprite_icons_css.svg#social_twitter") no-repeat;
+	}
+
+	&:hover::before {
+		background-color: #55acee;
+	}
+}
+
+.social-icons__icon_youtube {
+	&::before {
+		content: "";
+		display: block;
+		width: 31px;
+		height: 30px;
+		mask: url("svg/sprite_icons_css.svg#social_youtube") no-repeat;
+	}
+
+	&:hover::before {
+		background-color: #ff0000;
+	}
+}
+
+.footer-bot-wrap {
+	background-color: #4d4d4d;
+	padding: 10px 0;
+}
+
+.footer-address {
+	grid-column: 1 / span 6;
+	font-style: normal;
+}
+
+.footer-address__copyright {
+	margin: 0 0 3px 3px;
+}
+
+.footer-address__link {
+	display: inline-flex;
+	align-items: center;
+	color: var(--color_w);
+	text-decoration: none;
+}
+
+.footer-address__link_icon {
+	&::before {
+		content: "";
+		display: block;
+		width: 20px;
+		height: 20px;
+		mask: url("svg/sprite_icons_css.svg#location") no-repeat;
+		margin-right: 3px;
+		background-color: var(--color_w);
+		@include hover-transition;
+	}
+
+	&:hover::before {
+		background-color: var(--color_tm);
+	}
+}
+
+.button_dev {
+	font-size: 14px;
+	height: 35px;
+	padding: 0 12px 1px;
+	background-color: var(--color_b2);
+	border-color: var(--color_b2);
+	color: var(--color_w);
+
+	&:hover {
+		background-color: #808080;
+		border-color: #808080;
+	}
+}
+
+.footer-bot-wrap__button {
+	grid-column: 7 / span 6;
+	justify-self: end;
 }
 
 // grid-column: 1 / span 3;
