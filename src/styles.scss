@@ -20,7 +20,7 @@ ul {
 //// //// //// //// //// //// //// ////
 .grid-wrap {
 	display: grid;
-	grid-template-columns: var(--grid_col);
+	grid-template-columns: repeat(12, var(--grid_col));
 	grid-column-gap: var(--grid_col_gap);
 	justify-content: center;
 }
@@ -244,27 +244,45 @@ a,
 	align-items: center;
 }
 
+// top-block
 .top-block {
 	width: var(--content_width);
+	height: 90px;
+	position: relative;
 	display: flex;
 	justify-content: space-between;
 	align-items: center;
-	padding: 20px 0;
 }
 
+// logo
 .logo {
 	width: 135px;
 	height: 50px;
 	mask: url("svg/sprite_icons_css.svg#logo2") no-repeat;
 	background-color: var(--color_tm);
 	display: block;
-	@include a_hover-none;
+
+	&:hover {
+		background-color: var(--color_tm);
+	}
 }
 
-.footer-contact-block__logo {
-	background-color: var(--color_w);
+// address-pone-wrap
+.address-pone-wrap {
+	display: flex;
+	justify-content: space-around;
+	align-items: center;
+	flex-grow: 0.65;
 }
 
+@media screen and (max-width: 1140px) {
+	.address-pone-wrap {
+		flex-direction: column-reverse;
+		flex-grow: 0;
+	}
+}
+
+// address
 .address {
 	font-style: normal;
 }
@@ -300,6 +318,13 @@ a,
 	}
 }
 
+@media screen and (max-width: 1140px) {
+	.address__link {
+		flex-direction: row;
+	}
+}
+
+// pone
 .pone {
 	display: flex;
 	align-items: center;
@@ -349,6 +374,13 @@ a,
 	width: 27px;
 }
 
+@media screen and (max-width: 1140px) {
+	.pone {
+		margin-bottom: 10px;
+	}
+}
+
+// nav-secondary
 .nav-secondary {
 	width: 100%;
 	background-color: var(--color_05);
@@ -409,6 +441,13 @@ a,
 	}
 }
 
+@media screen and (max-width: 1140px) {
+	.nav-secondary__item {
+		margin-right: 40px;
+	}
+}
+
+// dropdown-list
 .dropdown-list {
 	visibility: hidden;
 	opacity: 0;
@@ -437,6 +476,7 @@ a,
 	text-decoration: none;
 }
 
+// nav-main
 .nav-main {
 	width: 100%;
 	background-color: var(--color_m1_rest);
@@ -483,6 +523,12 @@ a,
 	}
 }
 
+@media screen and (max-width: 1140px) {
+	.nav-main__item {
+		margin-right: 40px;
+	}
+}
+
 // Качественный ремонт без забот
 //// //// //// //// //// //// //// ////
 .slider-block__headline-h1 {
@@ -505,6 +551,13 @@ a,
 	background-color: var(--color_w);
 }
 
+@media screen and (max-width: 1140px) {
+	.slider-block__text-wrap {
+		grid-column: 1 / span 4;
+	}
+}
+
+// head-slider
 .head-slider {
 	grid-column: 4 / span 9;
 	position: relative;
@@ -571,6 +624,12 @@ a,
 	right: calc(100% + 10px);
 }
 
+@media screen and (max-width: 1140px) {
+	.head-slider {
+		grid-column: 5 / span 8;
+	}
+}
+
 // Чем мы отличаемся от 90% ремонтных компаний
 //// //// //// //// //// //// //// ////
 .icons-block {
@@ -585,8 +644,64 @@ a,
 
 .icons-block__icon-items {
 	grid-column-end: span 3;
+
+	&:last-of-type:nth-of-type(4n-3) {
+		grid-column-end: span 12;
+	}
+
+	&:nth-last-of-type(2):nth-of-type(4n-3) {
+		grid-column-start: 4;
+	}
+
+	&:nth-last-of-type(3):nth-of-type(4n-3),
+	&:nth-last-of-type(2):nth-of-type(4n-2),
+	&:nth-last-of-type(1):nth-of-type(4n-1) {
+		margin-left: calc(0px - (var(--grid_col_gap) + var(--grid_col)));
+	}
+
+	&:nth-last-of-type(3):nth-of-type(4n-3) {
+		grid-column-start: 3;
+	}
 }
 
+@media screen and (max-width: 1140px) {
+	.icons-block {
+		grid-row-gap: 60px;
+	}
+
+	.icons-block__icon-items {
+		grid-column-end: span 4;
+
+		&:last-of-type:nth-of-type(3n-2) {
+			grid-column-end: span 12;
+		}
+
+		&:nth-last-of-type(2):nth-of-type(3n-2) {
+			grid-column-start: 3;
+		}
+
+		// Обнуляит стили
+		&:last-of-type:nth-of-type(4n-3) {
+			grid-column-end: span 4;
+		}
+
+		&:nth-last-of-type(2):nth-of-type(4n-3) {
+			grid-column-start: auto;
+		}
+
+		&:nth-last-of-type(3):nth-of-type(4n-3),
+		&:nth-last-of-type(2):nth-of-type(4n-2),
+		&:nth-last-of-type(1):nth-of-type(4n-1) {
+			margin-left: 0;
+		}
+
+		&:nth-last-of-type(3):nth-of-type(4n-3) {
+			grid-column-start: auto;
+		}
+	}
+}
+
+// icon-items
 .icon-items {
 	display: flex;
 	flex-direction: column;
@@ -638,6 +753,13 @@ a,
 	grid-column-end: span 3;
 }
 
+@media screen and (max-width: 1140px) {
+	.types-repair__card-item {
+		grid-column-end: span 6;
+	}
+}
+
+// card-item
 .card-item {
 	&:hover .card-item__prise-blick,
 	&:hover .card-item__linc-detail {
@@ -719,7 +841,7 @@ a,
 	margin-bottom: -20px;
 }
 
-.numbered-icons-item {
+.numbered-icons-block__numbered-icons-item {
 	grid-column-end: span 6;
 	justify-self: center;
 	width: 450px;
@@ -729,6 +851,17 @@ a,
 	}
 }
 
+@media screen and (max-width: 1140px) {
+	.numbered-icons-block__numbered-icons-item {
+		width: auto;
+
+		&:last-of-type:nth-of-type(odd) {
+			grid-column: 4 / span 6;
+		}
+	}
+}
+
+// numbered-icons-item
 .numbered-icons-item__wrap {
 	display: flex;
 	align-items: center;
@@ -826,24 +959,28 @@ a,
 	margin-bottom: 60px;
 }
 
+.materials__logos-block .logos-block__img {
+	margin-bottom: 30px;
+}
+
+// accentuated-text
 .accentuated-text {
 	padding-left: 10px;
 	border-left: 4px solid var(--color_m1_rest);
 }
 
+// logos-block
 .logos-block {
 	grid-column: 1 / span 12;
 	display: flex;
-	justify-content: space-between;
+	justify-content: space-around;
 	align-items: center;
+	flex-wrap: wrap;
 }
 
 .logos-block__img {
 	mix-blend-mode: darken;
-}
-
-.materials__logos-block {
-	margin-bottom: 30px;
+	object-fit: scale-down;
 }
 
 .materials__text {
@@ -851,8 +988,21 @@ a,
 	text-align: center;
 }
 
+@media screen and (max-width: 1140px) {
+	.logos-block__img {
+		flex-basis: 200px;
+	}
+}
+
 // Отзывы
 //// //// //// //// //// //// //// ////
+.user-reviews__button {
+	grid-column: 1 / span 12;
+	justify-self: center;
+	margin-top: 40px;
+}
+
+// reviews-wrap
 .reviews-wrap {
 	grid-column-end: span 6;
 }
@@ -861,6 +1011,7 @@ a,
 	margin-bottom: 30px;
 }
 
+// review-block
 .review-block__user-card {
 	display: flex;
 	align-items: center;
@@ -939,12 +1090,6 @@ a,
 	object-fit: cover;
 }
 
-.user-reviews__button {
-	grid-column: 1 / span 12;
-	justify-self: center;
-	margin-top: 40px;
-}
-
 // Остались вопросы? Задайте их специалисту:
 //// //// //// //// //// //// //// ////
 .text-align_center,
@@ -968,6 +1113,16 @@ a,
 
 .contact-form__button {
 	justify-self: center;
+}
+
+@media screen and (max-width: 1140px) {
+	.contact-form__name {
+		grid-column: 2 / 7;
+	}
+
+	.contact-form__tell {
+		grid-column: 7 / 12;
+	}
 }
 
 // Футер
@@ -1038,6 +1193,10 @@ a,
 
 .footer-contact-block__pone {
 	margin-bottom: 20px;
+}
+
+.footer-contact-block__logo {
+	background-color: var(--color_w);
 }
 
 .social-icons {

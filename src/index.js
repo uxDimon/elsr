@@ -37,9 +37,18 @@ var mySwiper = new Swiper(".head-slider > .swiper-container", {
 
 var swiper1 = new Swiper(".review-block__swiper-container_1 > .swiper-container", {
 	// Optional parameters
-	slidesPerView: 4,
-	spaceBetween: 20,
 	slidesPerGroup: 1,
+	spaceBetween: 20,
+	breakpoints: {
+		// when window width is >= 1140px
+		1140: {
+			slidesPerView: 4
+		},
+		// when window width is >= 840px
+		840: {
+			slidesPerView: 3
+		}
+	},
 
 	navigation: {
 		nextEl: ".review-block__swiper-container_1 > .review-block__button_next",
@@ -48,9 +57,18 @@ var swiper1 = new Swiper(".review-block__swiper-container_1 > .swiper-container"
 });
 var swiper2 = new Swiper(".review-block__swiper-container_2 > .swiper-container", {
 	// Optional parameters
-	slidesPerView: 4,
-	spaceBetween: 20,
 	slidesPerGroup: 1,
+	spaceBetween: 20,
+	breakpoints: {
+		// when window width is >= 1140px
+		1140: {
+			slidesPerView: 4
+		},
+		// when window width is >= 840px
+		840: {
+			slidesPerView: 3
+		}
+	},
 
 	navigation: {
 		nextEl: ".review-block__swiper-container_2 > .review-block__button_next",

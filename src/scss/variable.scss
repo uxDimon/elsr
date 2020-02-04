@@ -1,9 +1,14 @@
 :root {
 	// Гриды
-	--grid_col: repeat(12, 65px);
+	--grid_col: 65px;
 	--grid_col_gap: 30px;
-
 	--content_width: 1110px;
+
+	@media screen and (max-width: 1140px) {
+		--grid_col: 40px;
+		--grid_col_gap: 30px;
+		--content_width: 810px;
+	}
 
 	// Текст
 	--h1_font_size: 48px;
