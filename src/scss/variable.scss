@@ -13,9 +13,11 @@
 	@media screen and (max-width: 840px) {
 		--grid_col: 60px;
 		--content_width: 540px;
+		--max_number_col: 6;
 	}
 
 	@media screen and (max-width: 540px) {
+		--max_number_col: 2;
 	}
 
 	// Текст
