@@ -1,0 +1,183 @@
+/*!
+ * Hamburgers
+ * @description Tasty CSS-animated hamburgers
+ * @author Jonathan Suh @jonsuh
+ * @site https://jonsuh.com/hamburgers
+ * @link https://github.com/jonsuh/hamburgers
+ */
+.hamburger {
+	padding: 15px 15px 8px;
+	display: none;
+	cursor: pointer;
+	transition-property: opacity, filter;
+	transition-duration: 0.15s;
+	transition-timing-function: linear;
+	font: inherit;
+	color: inherit;
+	text-transform: none;
+	background-color: transparent;
+	border: 0;
+	margin: 0;
+	overflow: visible;
+}
+
+.hamburger:hover {
+	background-color: var(--color_m1_hover);
+}
+
+.hamburger.is-active:hover {
+	background-color: var(--color_m1_hover);
+}
+
+.hamburger.is-active .hamburger-inner,
+.hamburger.is-active .hamburger-inner::before,
+.hamburger.is-active .hamburger-inner::after {
+	background-color: var(--color_tm);
+}
+
+.hamburger-box {
+	width: 40px;
+	height: 24px;
+	display: inline-block;
+	position: relative;
+}
+
+.hamburger-inner {
+	display: block;
+	top: 50%;
+	margin-top: -2px;
+}
+
+.hamburger-inner,
+.hamburger-inner::before,
+.hamburger-inner::after {
+	width: 40px;
+	height: 4px;
+	background-color: var(--color_tm);
+	border-radius: 4px;
+	position: absolute;
+	transition-property: transform;
+	transition-duration: 0.15s;
+	transition-timing-function: ease;
+}
+
+.hamburger-inner::before,
+.hamburger-inner::after {
+	content: "";
+	display: block;
+}
+
+.hamburger-inner::before {
+	top: -10px;
+}
+
+.hamburger-inner::after {
+	bottom: -10px;
+}
+
+@media screen and (max-width: 840px) {
+	.hamburger {
+		display: inline-block;
+	}
+}
+
+/*
+   * Slider animation
+   */
+.hamburger--slider .hamburger-inner {
+	top: 2px;
+}
+
+.hamburger--slider .hamburger-inner::before {
+	top: 10px;
+	transition-property: transform, opacity;
+	transition-timing-function: ease;
+	transition-duration: 0.15s;
+}
+
+.hamburger--slider .hamburger-inner::after {
+	top: 20px;
+}
+
+.hamburger--slider.is-active .hamburger-inner {
+	transform: translate3d(0, 10px, 0) rotate(45deg);
+}
+
+.hamburger--slider.is-active .hamburger-inner::before {
+	transform: rotate(-45deg) translate3d(-5.71429px, -6px, 0);
+	opacity: 0;
+}
+
+.hamburger--slider.is-active .hamburger-inner::after {
+	transform: translate3d(0, -20px, 0) rotate(-90deg);
+}
+
+// hamburger-manu
+.hamburger-manu {
+	position: absolute;
+	top: 100%;
+	right: 0;
+	padding: 15px;
+	display: flex;
+	flex-direction: column;
+	align-items: stretch;
+	z-index: 999;
+	background-color: var(--color_w);
+	visibility: hidden;
+	opacity: 0;
+	transition: 150ms ease-out 0ms;
+	transition-property: visibility, opacity;
+}
+
+.hamburger-manu_active {
+	visibility: visible;
+	opacity: 1;
+}
+
+.hamburger-manu__list {
+	padding-bottom: 15px;
+	border-bottom: solid 1px var(--color_05);
+	margin-bottom: 15px;
+
+	&:last-of-type {
+		padding-bottom: 0;
+		border: none;
+		margin-bottom: 20px;
+	}
+
+	&:last-child {
+		padding-bottom: 0;
+		border-bottom: none;
+		margin-bottom: 0;
+	}
+
+	&:first-child {
+		margin-top: -14px;
+	}
+}
+
+.hamburger-manu__item {
+	margin-bottom: 15px;
+
+	&:last-of-type {
+		margin-bottom: 0;
+	}
+}
+
+.hamburger-manu__linc {
+	font-size: 14px;
+	color: var(--color_b2);
+	text-decoration: none;
+}
+
+.hamburger-manu__linc_main {
+	color: var(--color_tm);
+}
+
+.hamburger-manu__button {
+	margin-bottom: 15px;
+
+	&:last-of-type {
+		margin-bottom: 0;
+	}
+}

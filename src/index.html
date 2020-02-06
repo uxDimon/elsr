@@ -9,20 +9,43 @@
 		<!-- Главное меню -->
 		<header class="main-menu">
 			<div class="top-block">
-				<a href="#" title="Перейти на главную страницу" class="logo"></a>
+				<a href="#" title="Перейти на главную страницу" class="logo top-block__logo"></a>
 				<div class="address-pone-wrap">
-					<address class="address">
+					<address class="address top-block__address">
 						<a class="address__link" href="#"><span class="address__icon">Москва</span><span>Оршанская д 4 оф 51</span></a>
 					</address>
-					<div class="pone">
+					<div class="pone top-block__pone">
 						<a href="tel:+79876543210" class="pone__linc">+7 (987) 654-32-10</a>
 						<a href="#" class="pone__icon pone__icon_skype"></a>
 						<a href="#" class="pone__icon pone__icon_telegram"></a>
 						<a href="#" class="pone__icon pone__icon_whatsapp"></a>
 					</div>
-					
 				</div>
-				<button class="button">Вызвать замерщика</button>
+				<button class="button top-block__button">Вызвать замерщика</button>
+				<!-- hamburger icon -->
+				<button class="hamburger hamburger--slider top-block__hamburger" type="button">
+					<span class="hamburger-box">
+						<span class="hamburger-inner"></span>
+					</span>
+				</button>
+				<!-- hamburger manu -->
+				<nav class="hamburger-manu">
+					<ul class="hamburger-manu__list">
+						<li class="hamburger-manu__item"><a href="#" class="hamburger-manu__linc hamburger-manu__linc_main">Портфолио</a></li>
+						<li class="hamburger-manu__item"><a href="#" class="hamburger-manu__linc hamburger-manu__linc_main">Акции</a></li>
+						<li class="hamburger-manu__item"><a href="#" class="hamburger-manu__linc hamburger-manu__linc_main">Цены</a></li>
+						<li class="hamburger-manu__item"><a href="#" class="hamburger-manu__linc hamburger-manu__linc_main">О компании</a></li>
+						<li class="hamburger-manu__item"><a href="#" class="hamburger-manu__linc hamburger-manu__linc_main">Контакты</a></li>
+					</ul>
+					<ul class="hamburger-manu__list">
+						<li class="hamburger-manu__item"><a href="#" class="hamburger-manu__linc">Виды ремонта</a></li>
+						<li class="hamburger-manu__item"><a href="#" class="hamburger-manu__linc">Типы помещений</a></li>
+						<li class="hamburger-manu__item"><a href="#" class="hamburger-manu__linc">Отзывы</a></li>
+						<li class="hamburger-manu__item"><a href="#" class="hamburger-manu__linc">Гарантии</a></li>
+					</ul>
+					<button class="button hamburger-manu__button">Вызвать замерщика</button>
+					<button class="button button_icon_calculator hamburger-manu__button">Калькулятор ремонтa</button>
+				</nav>
 			</div>
 			<div class="nav-secondary">
 				<nav class="nav-secondary__wrap">
@@ -395,7 +418,7 @@
 					<li class="prise-blick__item"><span class="text-color_b2">Стоимость ремонта </span>420 000 ₽</li>
 				</ul>
 			</a>
-			<button class="button gallery-works-item__button">Смотреть портфолио</button>
+			<button class="button finished-work__button">Смотреть портфолио</button>
 		</div>
 
 		<!-- Отделочные материалы -->
@@ -427,7 +450,7 @@
 
 		<!-- Отзывы -->
 		<div class="grid-wrap grid-wrap_pading user-reviews">
-			<div class="reviews-wrap">
+			<div class="reviews-wrap user-reviews__reviews-wrap">
 				<h3 class="reviews-wrap__headline">Отзывы от частных лиц</h3>
 				<div class="review-block">
 					<div class="review-block__user-card">
@@ -477,7 +500,7 @@
 					<a href="#" class="linc-arrow linc-arrow_right-right review-block__linc-arrow">Читать полный отзыв</a>
 				</div>
 			</div>
-			<div class="reviews-wrap">
+			<div class="reviews-wrap user-reviews__reviews-wrap">
 				<h3 class="reviews-wrap__headline">Отзывы от юридических лиц</h3>
 				<div class="review-block">
 					<div class="review-block__user-card">
@@ -534,14 +557,16 @@
 		<div class="grid-wrap grid-wrap_pading contact-form">
 			<h2 class="contact-form__headline-h2 mimicry_h1 text-align_center">Остались вопросы? Задайте их специалисту:</h2>
 			<label class="input-text contact-form__name">
-				<input class="input-text__input-area" type="text" name="name" placeholder="Ваше имя"/>
+				<input class="input-text__input-area" type="text" name="name" placeholder="Ваше имя" />
 				<span class="input-text__placeholder-mimicry">Ваше имя</span>
 			</label>
 			<label class="input-text contact-form__tell">
-				<input class="input-text__input-area" type="text" name="tell" placeholder="Телефон"/>
+				<input class="input-text__input-area" type="text" name="tell" placeholder="Телефон" />
 				<span class="input-text__placeholder-mimicry">Телефон</span>
 			</label>
-			<p class="contact-form__text-personal-data text-color_b2 text-size_14 text-align_center">Нажимая на кнопку "Отправить", вы даете согласие на <a href="#" class="text-color_b2">обработку своих персональных данных</a>.</p>
+			<p class="contact-form__text-personal-data text-color_b2 text-size_14 text-align_center">
+				Нажимая на кнопку "Отправить", вы даете согласие на <a href="#" class="text-color_b2">обработку своих персональных данных</a>.
+			</p>
 			<button class="button button_icon_pone contact-form__button">Смотреть портфолио</button>
 		</div>
 
@@ -606,7 +631,7 @@
 				</div>
 			</div>
 			<div class="grid-wrap footer-bot-wrap">
-				<address class="footer-address">
+				<address class="footer-address footer-bot-wrap__footer-address">
 					<span class="footer-address__copyright">© 2019 “Элемент строй” ремонт квартир</span>
 					<a class="footer-address__link footer-address__link_icon" href="#">Москва, Оршанская д 4 оф 51</a>
 				</address>

@@ -13,6 +13,14 @@ for (let i of document.querySelectorAll(".input-text__input-area")) {
 	};
 }
 
+let hamburger_icon = document.querySelector(".hamburger");
+let hamburger_manu = document.querySelector(".hamburger-manu");
+
+hamburger_icon.addEventListener("click", function() {
+	hamburger_icon.classList.toggle("is-active");
+	hamburger_manu.classList.toggle("hamburger-manu_active");
+});
+
 var mySwiper = new Swiper(".head-slider > .swiper-container", {
 	// https://swiperjs.com/api
 	// Optional parameters
@@ -47,6 +55,10 @@ var swiper1 = new Swiper(".review-block__swiper-container_1 > .swiper-container"
 		// when window width is >= 840px
 		840: {
 			slidesPerView: 3
+		},
+		// when window width is >= 540px
+		540: {
+			slidesPerView: 4
 		}
 	},
 

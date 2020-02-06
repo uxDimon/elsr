@@ -3,11 +3,19 @@
 	--grid_col: 65px;
 	--grid_col_gap: 30px;
 	--content_width: 1110px;
+	--max_number_col: 12;
 
 	@media screen and (max-width: 1140px) {
 		--grid_col: 40px;
-		--grid_col_gap: 30px;
 		--content_width: 810px;
+	}
+
+	@media screen and (max-width: 840px) {
+		--grid_col: 60px;
+		--content_width: 540px;
+	}
+
+	@media screen and (max-width: 540px) {
 	}
 
 	// Текст
@@ -16,6 +24,16 @@
 	--h3_font_size: 24px;
 	--p16_font_size: 16px;
 	--p14_font_size: 14px;
+
+	@media screen and (max-width: 840px) {
+		--h1_font_size: 38px;
+		--p16_font_size: 14px;
+		--h3_font_size: 20px;
+	}
+
+	@media screen and (max-width: 540px) {
+		--h1_font_size: 32px;
+	}
 
 	// Цвут
 	--color_m1_rest: #f7d14c;
@@ -26,6 +44,4 @@
 	--color_05: #f2f2f2;
 	--color_03: #f7f7f7;
 	--color_w: #ffffff;
-
-	--c_test: #dd0b0b;
 }
