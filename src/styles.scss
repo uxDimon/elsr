@@ -8,7 +8,7 @@
 }
 body {
 	margin: 0;
-	min-width: 320px;
+	min-width: 360px;
 }
 
 ul {
@@ -40,9 +40,10 @@ ul {
 
 @media screen and (max-width: 540px) {
 	.grid-wrap {
-		grid-template-columns: repeat(var(--max_number_col), auto);
+		grid-template-columns: repeat(var(--max_number_col), 1fr);
 		padding-left: 15px;
 		padding-right: 15px;
+		justify-content: space-between;
 	}
 }
 
@@ -317,6 +318,23 @@ a,
 	.top-block__address,
 	.top-block__pone .pone__icon {
 		display: none;
+	}
+}
+
+@media screen and (max-width: 540px) {
+	.top-block {
+		width: 100%;
+		height: 50px;
+		padding-left: 15px;
+		padding-right: 15px;
+	}
+
+	.top-block .top-block__pone {
+		display: none;
+	}
+
+	.top-block__logo {
+		transform: scale(0.6) translate(-11%, 0);
 	}
 }
 
@@ -856,7 +874,17 @@ a,
 
 		// Новые стили
 		&:nth-of-type(odd):last-of-type {
-			grid-column-end: span 6;
+			grid-column-end: span var(--max_number_col);
+		}
+	}
+}
+
+@media screen and (max-width: 540px) {
+	.icons-block__icon-items {
+		grid-column: span var(--max_number_col);
+
+		&:nth-of-type(1n + 5) {
+			display: none;
 		}
 	}
 }
@@ -928,6 +956,16 @@ a,
 	.types-repair__card-item {
 		grid-column-end: span 3;
 	}
+
+	.types-repair .card-item__img-wrap {
+		height: 250px;
+	}
+}
+
+@media screen and (max-width: 540px) {
+	.types-repair__card-item {
+		grid-column-end: span var(--max_number_col);
+	}
 }
 
 // card-item
@@ -989,7 +1027,6 @@ a,
 
 .consultation__wrap {
 	display: flex;
-	justify-self: center;
 	justify-content: center;
 	flex-wrap: wrap;
 
@@ -1008,6 +1045,8 @@ a,
 	}
 
 	.consultation__wrap {
+		justify-content: start;
+
 		> * {
 			margin-right: 0;
 			margin-bottom: 20px;
@@ -1017,6 +1056,11 @@ a,
 			margin-bottom: 0;
 		}
 	}
+}
+
+@media screen and (max-width: 540px) {
+	// .consultation__wrap {
+	// }
 }
 
 // Этапы ремонта квартиры в новостройке
@@ -1170,17 +1214,11 @@ a,
 		height: 250px;
 
 		&:nth-of-type(4n),
-		&:nth-of-type(4n + 1) {
-			grid-column-end: span 6;
-		}
-
+		&:nth-of-type(4n + 1),
+		&:last-of-type:nth-of-type(odd),
 		&:nth-of-type(4n + 2),
 		&:nth-of-type(4n + 3) {
-			grid-column-end: span 6;
-		}
-
-		&:last-of-type:nth-of-type(odd) {
-			grid-column-end: span 6;
+			grid-column-end: span var(--max_number_col);
 		}
 
 		&:nth-of-type(1n + 4) {
@@ -1217,6 +1255,7 @@ a,
 
 	.materials__accentuated-text {
 		margin-bottom: 30px;
+		grid-column-end: span var(--max_number_col);
 	}
 
 	.logos-block.materials__logos-block {
@@ -1276,6 +1315,10 @@ a,
 
 	.user-reviews__button {
 		margin-top: 0;
+	}
+
+	.user-reviews__reviews-wrap {
+		grid-column-end: span var(--max_number_col);
 	}
 }
 
@@ -1411,6 +1454,13 @@ a,
 	}
 }
 
+@media screen and (max-width: 540px) {
+	.contact-form__name,
+	.contact-form__tell {
+		grid-column: span var(--max_number_col);
+	}
+}
+
 // Футер
 //// //// //// //// //// //// //// ////
 .footer {
@@ -1422,16 +1472,22 @@ a,
 	grid-column-end: span 7;
 	display: flex;
 	justify-content: space-between;
+	flex-wrap: wrap;
 }
 
 .footer-top-wrap {
 	background-color: var(--color_b2);
-	padding: 50px 0;
+	padding-top: 50px;
+	padding-bottom: 50px;
 }
 
 @media screen and (max-width: 840px) {
 	.footer__manu-wrap {
-		grid-column-end: span 6;
+		grid-column-end: span var(--max_number_col);
+	}
+
+	.footer-main-manu,
+	.footer-manu {
 		margin-bottom: 50px;
 	}
 }
@@ -1496,7 +1552,7 @@ a,
 
 @media screen and (max-width: 840px) {
 	.footer-contact-block {
-		grid-column-end: span 6;
+		grid-column-end: span var(--max_number_col);
 		align-items: center;
 	}
 }

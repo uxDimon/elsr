@@ -59,6 +59,10 @@ var swiper1 = new Swiper(".review-block__swiper-container_1 > .swiper-container"
 		// when window width is >= 540px
 		540: {
 			slidesPerView: 4
+		},
+		// when window width is >= 360px
+		360: {
+			slidesPerView: 3
 		}
 	},
 
@@ -79,6 +83,10 @@ var swiper2 = new Swiper(".review-block__swiper-container_2 > .swiper-container"
 		// when window width is >= 840px
 		840: {
 			slidesPerView: 3
+		},
+		// when window width is >= 360px
+		360: {
+			slidesPerView: 4
 		}
 	},
 
