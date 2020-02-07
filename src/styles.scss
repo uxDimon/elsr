@@ -187,6 +187,10 @@ ul {
 	.prise-blick__item_name {
 		font-size: 18px;
 	}
+
+	.headline-br {
+		display: none;
+	}
 }
 
 // Текст
@@ -269,10 +273,12 @@ a,
 // Главное меню
 //// //// //// //// //// //// //// ////
 .main-menu {
+	position: relative;
 	width: 100%;
 	display: flex;
 	flex-direction: column;
 	align-items: center;
+	z-index: 999;
 }
 
 @media screen and (max-width: 840px) {
@@ -765,6 +771,20 @@ a,
 	}
 }
 
+@media screen and (max-width: 540px) {
+	.head-slider__button_prev {
+		bottom: 70px;
+	}
+
+	.head-slider__button_next {
+		bottom: 70px;
+	}
+
+	.swiper-slide__prise-blick {
+		left: 10px;
+	}
+}
+
 // Чем мы отличаемся от 90% ремонтных компаний
 //// //// //// //// //// //// //// ////
 .icons-block {
@@ -1045,22 +1065,20 @@ a,
 	}
 
 	.consultation__wrap {
-		justify-content: start;
+		flex-direction: column-reverse;
+		justify-content: flex-start;
+		align-items: flex-start;
 
 		> * {
 			margin-right: 0;
 			margin-bottom: 20px;
 		}
 
-		> *:last-child {
+		// :first-child потому что у родителя flex-direction: column-reverse;
+		> *:first-child {
 			margin-bottom: 0;
 		}
 	}
-}
-
-@media screen and (max-width: 540px) {
-	// .consultation__wrap {
-	// }
 }
 
 // Этапы ремонта квартиры в новостройке

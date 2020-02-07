@@ -13,12 +13,25 @@ for (let i of document.querySelectorAll(".input-text__input-area")) {
 	};
 }
 
+let close_area_hamburger = document.createElement("div");
+close_area_hamburger.classList.add("close-area-hamburger");
+document.body.append(close_area_hamburger);
+
 let hamburger_icon = document.querySelector(".hamburger");
 let hamburger_manu = document.querySelector(".hamburger-manu");
 
-hamburger_icon.addEventListener("click", function() {
+function open_close() {
 	hamburger_icon.classList.toggle("is-active");
 	hamburger_manu.classList.toggle("hamburger-manu_active");
+	close_area_hamburger.classList.toggle("close-area-hamburger_active");
+}
+
+hamburger_icon.addEventListener("click", function() {
+	open_close();
+});
+
+close_area_hamburger.addEventListener("click", function() {
+	open_close();
 });
 
 var mySwiper = new Swiper(".head-slider > .swiper-container", {
@@ -42,7 +55,6 @@ var mySwiper = new Swiper(".head-slider > .swiper-container", {
 		prevEl: ".head-slider__button_prev"
 	}
 });
-
 var swiper1 = new Swiper(".review-block__swiper-container_1 > .swiper-container", {
 	// Optional parameters
 	slidesPerGroup: 1,
@@ -84,9 +96,13 @@ var swiper2 = new Swiper(".review-block__swiper-container_2 > .swiper-container"
 		840: {
 			slidesPerView: 3
 		},
+		// when window width is >= 540px
+		540: {
+			slidesPerView: 4
+		},
 		// when window width is >= 360px
 		360: {
-			slidesPerView: 4
+			slidesPerView: 3
 		}
 	},
 
