@@ -1,6 +1,4 @@
-# Элемент Строй
-
-## [Демо](https://uxdimon.github.io/elsr/)
+# Элемент Строй [Демо](https://uxdimon.github.io/elsr/)
 
 ## Building and running on localhost
 

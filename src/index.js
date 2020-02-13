@@ -1,5 +1,10 @@
 import "./styles.scss";
-import Swiper from "swiper";
+
+// Import Swiper and modules
+import { Swiper, Navigation, Pagination, EffectFade } from "swiper/js/swiper.esm.js";
+// Install Swiper modules
+Swiper.use([Navigation, Pagination, EffectFade]);
+// import Swiper css
 import "../node_modules/swiper/css/swiper.min.css";
 
 for (let i of document.querySelectorAll(".input-text__input-area")) {
